@@ -7,3 +7,19 @@ before_install:
 
 script:
   - docker run -e CI=true nikita47/docker-react npm run test -- --coverage
+
+# Deployment in AWS Elastic Beanstalk (only master branch)
+# 088 Automated Deployments (Module 7) - connecting Travis CI with AWS
+#deploy:
+#  provider: elasticbeanstalk
+#  region: "us-west-2"
+#  app: "docker"
+#  env: "Docker-env"
+#  bucket_name: "something with us-west-2"
+#  bucket_path: "docker"
+#  on:
+#    branch: master
+#  # Variables from Travis CI
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key:
+#    secure: "$AWS_SECRET_KEY"
